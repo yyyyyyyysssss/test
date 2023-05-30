@@ -1,0 +1,15 @@
+server:
+  port: 8010
+
+spring:
+  profiles:
+    active: dev
+
+logging:
+  level:
+    com.work: info
+  file:
+    name: /var/log/app.log
+  pattern:
+    file: "%d{yyyy/MM/dd HH:mm:ss.SSS} %-5level [%thread] %logger : %replace(%msg){'\n', ''}%n"
+    console: "%d{yyyy/MM/dd HH:mm:ss.SSS} %-5level [%thread] %logger : %replace(%msg){'\n', ''}%n"
