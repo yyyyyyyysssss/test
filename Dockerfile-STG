@@ -1,0 +1,11 @@
+FROM ys0921/jdk:jdk8v1.0
+
+MAINTAINER ys ysyanshuai2@gmail.com
+
+WORKDIR /app
+
+RUN chmod 777 /var/log
+
+ADD target/order-service.jar /app
+
+CMD ["sh","-c","java -Xmx2G -Xms2G -XX:SurvivorRatio=4 -XX:MetaspaceSize=100m -XX:+UseG1GC -XX:MaxGCPauseMillis=50 -jar -XX:InitiatingHeapOccupancyPercent=50 -Xlog:gc*:file=/var/log/java_gc.log -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/var/log/java_heapdump.hprof /app/order-service.jar --spring.profiles.active=stg"]
