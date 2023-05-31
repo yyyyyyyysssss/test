@@ -82,6 +82,8 @@
     </dependencies>
 
     <build>
+        <defaultGoal>compile</defaultGoal>
+
         <finalName>${project.artifactId}</finalName>
         <resources>
             <resource>
