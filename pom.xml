@@ -21,6 +21,7 @@
         <maven.plugin.validation>VERBOSE</maven.plugin.validation>
     </properties>
 
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
