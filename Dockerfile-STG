@@ -8,4 +8,4 @@ RUN chmod 777 /var/log
 
 ADD target/work-springboot.jar /app
 
-CMD ["sh","-c","java -Xmx2G -Xms2G -XX:SurvivorRatio=4 -XX:MetaspaceSize=100m -XX:+UseG1GC -XX:MaxGCPauseMillis=50 -jar -XX:InitiatingHeapOccupancyPercent=50 -Xlog:gc*:file=/var/log/java_gc.log -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/var/log/java_heapdump.hprof /app/work-springboot.jar --spring.profiles.active=stg"]
+CMD ["sh","-c","java -Xmx512m -Xms256m -XX:SurvivorRatio=4 -XX:+UseG1GC -XX:MaxGCPauseMillis=50 -jar -XX:InitiatingHeapOccupancyPercent=70 -Xloggc:/var/log/java_gc.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps /app/work-springboot.jar --spring.profiles.active=stg"]
