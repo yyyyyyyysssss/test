@@ -8,4 +8,4 @@ RUN chmod 777 /var/log
 
 ADD target/work-springboot.jar /app
 
-CMD ["sh","-c","java -Xmx512m -Xms256m -XX:SurvivorRatio=4 -XX:+UseG1GC -XX:MaxGCPauseMillis=50 -jar -XX:InitiatingHeapOccupancyPercent=70 -Xloggc:/var/log/java_gc.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps /app/work-springboot.jar --spring.profiles.active=stg"]
+CMD ["sh","-c","java -Djasypt.encryptor.password=TkjSRK2dApiZBGms5NE75TqXudMq7 -Xmx512m -Xms256m -XX:SurvivorRatio=4 -XX:+UseG1GC -XX:MaxGCPauseMillis=50 -jar -XX:InitiatingHeapOccupancyPercent=70 -Xloggc:/var/log/java_gc.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps /app/work-springboot.jar --spring.profiles.active=stg"]
