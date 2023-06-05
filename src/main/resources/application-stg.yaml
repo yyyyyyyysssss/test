@@ -1,0 +1,9 @@
+
+jasypt:
+  encryptor:
+    password: TkjSRK2dApiZBGms5NE75TqXudMq7
+    algorithm: PBEWithMD5AndDES
+
+account:
+  username: ENC(ODDcPTv1wxpeeEAT9xkpJw==)
+  password: ENC(01ekb2BqtKLztxleQKUddQ==)
